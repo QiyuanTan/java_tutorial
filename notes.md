@@ -199,6 +199,28 @@ public Human(String gender, double height, int age, String race){ //constructor(
 应包含方法：
 * String get_info() //返回这本书的所有信息
 
+## 继承（Inheritance）
+
+
+## Math
+>* Math.PI = 3.141592653589793;  
+>* Math.sqrt(double a)
+>* Math.pow(double a, double b)
+>* Math.abs(double a)
+>* Math.abs(int a)
+>* Math.max(x, y)
+>* Math.min(x, y)
+>* Math.min(x, y)
+>* Math.random()
+
+### Math.random()
+* 返回一个>=0, <1的一个double
+
+eg: 生成一个[50, 100]的随机数
+```java
+int rand_number = 50 + (int)(Math.random()*51);
+```
+
 ## 字符串
 * 将其他数据类型转换为String：String.valueOf(某个变量);
 * 使用```+```将不同字符串连接

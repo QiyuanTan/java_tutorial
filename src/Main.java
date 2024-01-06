@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args){
-        Wcy_book b = new Wcy_book("TPO阅读1-32", 2022, 6532);
-        b.print_info();
+        TextBook t = new TextBook("abc", 2023, 100, "cs");
+        System.out.println(t.print_info());
     }
 }
