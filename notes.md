@@ -151,6 +151,14 @@ public static boolean is_even(int a){
     return a % 2 == 0;
 }
 ```
+```java
+//调用is_even()
+is_even(5); // 得到false
+
+//使用示例
+boolean b = is_even(5); // 得到false并将结果存储进b，此时is_even(5)等于false
+System.out.print(is_even(5)); // 得到false并直接打印结果，此时is_even(5)等于false
+```
 
 ## 属性（attribute）
 ### 声明 

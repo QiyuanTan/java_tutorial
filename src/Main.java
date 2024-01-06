@@ -1,7 +1,6 @@
 public class Main {
     public static void main(String[] args){
-        double a = 10;
-        String s = String.valueOf(a);
-        System.out.println(s);
+        Wcy_book b = new Wcy_book("TPO阅读1-32", 2022, 6532);
+        b.print_info();
     }
 }
