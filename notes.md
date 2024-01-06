@@ -55,8 +55,8 @@ a += 10;
 >%=
 
 ## 递增/递减
->--  
->++
+>* ++
+>* --
 
 eg:
 ```java
@@ -117,7 +117,7 @@ output: ```2```
 * final: 赋值后无法被改变
 * static变量：静态变量, 所有object共享一个变量
 * static方法：在不创建object的情况下使用方法
->* 被static修饰后的方法或变量都需要通过class直接
+>* 被static修饰后的方法或变量都需要通过class直接调用
 
 ## 方法（method/function）
 ### 声明 
@@ -181,14 +181,15 @@ public Human(String gender, double height, int age, String race){ //constructor(
 ```
 
 ### practice：
-创建一个Book class
+创建一个Book class  
+
 应该包含属性：
 * title
 * printed_year
 * num_of_pages
 
 应包含方法：
-* String print_info() //打印这本书的所有信息
+* String get_info() //返回这本书的所有信息
 
 ## 字符串
 * 将其他数据类型转换为String：String.valueOf(某个变量);
