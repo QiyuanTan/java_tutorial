@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args){
-        double a = 2.9;
-        System.out.println((int)a);
+        double a = 10;
+        String s = String.valueOf(a);
+        System.out.println(s);
     }
 }

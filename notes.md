@@ -94,3 +94,102 @@ public class Main {
 }
 ```
 output: ```2```
+
+# 面向对象
+## class(类)
+类是一个模板，它描述一类对象的行为和状态。  
+## object(对象)
+对象是类的一个实例（instance），有状态和行为。  
+例如，一条狗是一个对象，它的状态(attributes/属性)有：颜色、名字、品种；行为(method/方法)有：摇尾巴、叫、吃等。
+
+参考 [菜鸟教程](https://www.runoob.com/java/java-object-classes.html)
+
+## 修饰符
+访问修饰符
+* public: 可以从class外部直接访问
+* private： 不可以从class外部直接访问
+
+
+>* Java的默认访问权限是public
+>* AP CSA中，所有的attribute都应该是private的
+
+非访问修饰符
+* final: 赋值后无法被改变
+* static变量：静态变量, 所有object共享一个变量
+* static方法：在不创建object的情况下使用方法
+>* 被static修饰后的方法或变量都需要通过class直接
+
+## 方法（method/function）
+### 声明 
+```
+修饰符 返回值类型 方法名(){
+    //下级代码
+}
+```
+eg:  
+```java
+public void birthday(){
+    age++;
+}
+```
+>* 如果方法不返回数据，返回值类型应声明为void  
+
+### 调用
+
+* 在同一个class内：直接通过方法名调用
+* 不在同一个class内：通过object或class（静态方法）调用  
+eg:  
+``` java
+object.method();
+```
+
+### 返回数据
+使用```return```关键字返回数据  
+eg:  
+```java
+public static boolean is_even(int a){
+    return a % 2 == 0;
+}
+```
+
+## 属性（attribute）
+### 声明 
+```
+修饰符 数据类型 变量名;
+```
+eg:  
+```java
+private final String gender;
+```
+>* AP CSA中，所有的attribute都应该是private的
+
+## 构造器（constructor）
+一个用来初始化一个object的method  
+特征：
+* 不声明返回值类型
+* 永远是public
+* 名称与class名相同  
+
+eg:  
+```java
+public Human(String gender, double height, int age, String race){ //constructor(构造器)
+    this.gender = gender;
+    this.height = height;
+    this.age = age;
+    this.race = race;
+    }
+```
+
+### practice：
+创建一个Book class
+应该包含属性：
+* title
+* printed_year
+* num_of_pages
+
+应包含方法：
+* String print_info() //打印这本书的所有信息
+
+## 字符串
+* 将其他数据类型转换为String：String.valueOf(某个变量);
+* 使用```+```将不同字符串连接
