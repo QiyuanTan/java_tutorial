@@ -41,6 +41,10 @@ int a;
 | /   | 除  |
 | %   | 取余 |
 
+### 运算顺序
+* \*, /, %
+* +, -
+
 ## Compound assignment operators
 eg:
 ```java
@@ -104,22 +108,53 @@ output: ```2```
 
 参考 [菜鸟教程](https://www.runoob.com/java/java-object-classes.html)
 
-## 修饰符
-访问修饰符
-* public: 可以从class外部直接访问
-* private： 不可以从class外部直接访问
+### class的声明
+```
+修饰符 class的名称{
+    属性（attribute）1
+    属性（attribute）2
+    属性（attribute）3
+    属性（attribute）4
+    构造器constructor(){}
+    方法（method）{}1
+    方法（method）{}2
+    方法（method）{}3
+    方法（method）{}4
+    方法（method）{}5
+}
+```
+eg: 
+```java
+public class Dog{
+    String breed;
+    String size;
+    String color;
+    int age;
+    public Dog(String breed, String size, String color, int age){
+        
+    }
+}
+```
 
+## object的声明
+```
+class名 变量名 = new constructor();
+```
 
->* Java的默认访问权限是public
+## 属性（attribute）
+### 声明
+```
+修饰符 数据类型 变量名;
+```
+eg:
+```java
+private final String gender;
+```
 >* AP CSA中，所有的attribute都应该是private的
 
-非访问修饰符
-* final: 赋值后无法被改变
-* static变量：静态变量, 所有object共享一个变量
-* static方法：在不创建object的情况下使用方法
->* 被static修饰后的方法或变量都需要通过class直接调用
-
 ## 方法（method/function）
+* 一段通用的代码，在一个地方写好之后在其他地方多次调用
+* 一个对象具有的方法，用来进行一系列操作
 ### 声明 
 ```
 修饰符 返回值类型 方法名(){
@@ -160,16 +195,16 @@ boolean b = is_even(5); // 得到false并将结果存储进b，此时is_even(5)�
 System.out.print(is_even(5)); // 得到false并直接打印结果，此时is_even(5)等于false
 ```
 
-## 属性（attribute）
-### 声明 
-```
-修饰符 数据类型 变量名;
-```
-eg:  
-```java
-private final String gender;
-```
->* AP CSA中，所有的attribute都应该是private的
+三种method
+> accessor: 访问/返回class中的attribute
+>> * 没有参数
+>> * 返回值类型与要访问的attribute相关
+
+> mutator: 改变class中的attribute
+>> * 需要参数
+>> * 返回值类型为void
+
+> helper: 复用逻辑，简化代码
 
 ## 构造器（constructor）
 一个用来初始化一个object的method  
@@ -188,6 +223,21 @@ public Human(String gender, double height, int age, String race){ //constructor(
     }
 ```
 
+## 修饰符
+访问修饰符
+* public: 可以从class外部直接访问
+* private： 不可以从class外部直接访问
+
+
+>* Java的默认访问权限是public
+>* AP CSA中，所有的attribute都应该是private的
+
+非访问修饰符
+* final: 赋值后无法被改变
+* static变量：静态变量, 所有object共享一个变量
+* static方法：在不创建object的情况下使用方法
+>* 被static修饰后的方法或变量都需要通过class直接调用
+
 ### practice：
 创建一个Book class  
 
@@ -199,7 +249,36 @@ public Human(String gender, double height, int age, String race){ //constructor(
 应包含方法：
 * String get_info() //返回这本书的所有信息
 
+在main class中创建一个book object并使用```get_info()```方法打印出它的信息
+
 ## 继承（Inheritance）
+子类（subclass）  
+父类（superclass）
+
+子类继承父类  
+
+声明方式
+```java
+public class 子类名 extends 父类名{
+    // implementation
+}
+```
+### 被继承的：
+* 父类当中的所有方法
+* 父类当中的所有变量（但private变量无法直接访问）
+### 不被继承的
+* constructor
+
+## 子类的constructor
+* 在没有显性调用调用父类的构造器，会自动隐性调用父类的构造器
+* 如果调用父类的构造器```super（）```一定要放在constructor的最前面
+
+## overload(重载)
+* 在同一个类中创建多个名称相同但参数不同的方法
+* 如果出现名称相同且参数相同（且顺序相同）会报错
+
+## overwrite(重写)
+* 在子类当中重写父类的方法
 
 
 ## Math

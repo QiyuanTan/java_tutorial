@@ -4,7 +4,7 @@ public class TextBook extends Book{
         super(title, printed_year, num_of_pages);
         this.subject = subject;
     }
-    public String print_info(){
-        return super.print_info() + "\nsubject:" + subject;
+    public String get_info(){
+        return super.get_info() + "\nsubject:" + subject;
     }
 }
